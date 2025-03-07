@@ -16,6 +16,10 @@ const bicicles = [
         peso: 7
     },
     {
+        nome: 'Rose Ultimate',
+        peso: 5
+    },
+    {
         nome: 'Colnago',
         peso: 2
     }
@@ -26,8 +30,6 @@ const bicicles = [
 // console.log(bicicles[0]); // --> stampa primo elemento in array
 // console.log(bicicles[0].peso); // --> stampa la chiave 'peso' dell'oggetto contenuto nell'array
 
-// creo un array vuoto dove andrò a inserire il valore del peso minore
-let lesserWeight;
 
 // creo una variabile dove immetto un valore minimo di partenza
 let minValue = bicicles[0];
@@ -36,16 +38,17 @@ let minValue = bicicles[0];
 for ( let i = 0; i < bicicles.length; i++){
 
    if(minValue.peso > bicicles[i].peso){
-        console.log(bicicles[i].peso);
-        lesserWeight = bicicles[i];
-    }
+ 
+        minValue = bicicles[i];
+       
+    } 
 
-}console.log(lesserWeight);
+};
 
 const answerElement = document.getElementById('answer');
-console.log(answerElement);
 
-answerElement.innerText = `La bici dal peso più leggero è la bici ${lesserWeight.nome} dal peso di ${lesserWeight.peso} kg.`;
+
+answerElement.innerText = `La bici dal peso più leggero è la bici ${minValue.nome} dal peso di ${minValue.peso} kg.`;
 
 
 
