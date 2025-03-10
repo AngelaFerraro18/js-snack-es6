@@ -39,33 +39,18 @@ for (let i = 0; i < footballTeams.length; i++){
    
 };
 
-//creo un array vuoto
-let newArrayTeams = [];
-
-//creo un ciclo for per creare degli oggetti dove raggruppo il nome della squadra e i falli che ha subito
-for (let i = 0; i < footballTeams.length; i++){
-
-    let teamResume = {
-        nome: footballTeams[i].nome,
-        falliSubiti: footballTeams[i].falliSubiti
-    }
-    // metto i dati raccolti nell'array creato in precedenza
-    newArrayTeams.push(teamResume);
-
-}console.log(newArrayTeams);
-
 
 //vado a creare una variabile dove salvo il valore della lista creata in html
 const overviewFootballElement = document.getElementById('overview-football-teams');
 
 //creo un ciclo for dove creo elementi li da inserire in ul
-for (let i = 0; i < newArrayTeams.length; i++){
+for (let i = 0; i < footballTeams.length; i++){
 
     const listElement = document.createElement('li');
 
     //in ogni li andrò a scrivere il nome della squadra e i falli subiti
-    listElement.innerText = `Squadra: ${newArrayTeams[i].nome}
-    Falli subiti: ${newArrayTeams[i].falliSubiti}`;
+    listElement.innerText = `Squadra: ${footballTeams[i].nome}
+    Falli subiti: ${footballTeams[i].falliSubiti}`;
 
     //collego ul con li
     overviewFootballElement.appendChild(listElement);
